@@ -1,0 +1,33 @@
+{
+  "name": "ntsl-profit",
+  "displayName": "NTSL Profit",
+  "description": "Syntax highlighting for Nelógica Profit NTSL (.src) files",
+  "version": "0.0.1",
+  "publisher": "marcio",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:ntsl"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ntsl",
+        "aliases": ["NTSL", "ntsl"],
+        "extensions": [".src"]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ntsl",
+        "scopeName": "source.ntsl",
+        "path": "./syntaxes/ntsl.tmLanguage.json"
+      }
+    ]
+  }
+}

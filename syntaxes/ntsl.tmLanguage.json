@@ -1,0 +1,106 @@
+{
+  "scopeName": "source.ntsl",
+  "name": "NTSL",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#logical_operators" },
+    { "include": "#types" },
+    { "include": "#booleans" },
+    { "include": "#builtins" },
+    { "include": "#series" },
+    { "include": "#constants" },
+    { "include": "#operators" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.ntsl", "match": "//.*$" },
+        { "name": "comment.block.curly.ntsl", "begin": "\\{", "end": "\\}", "patterns": [{ "include": "#comments" }] },
+        { "name": "comment.block.paren.ntsl", "begin": "\\(\\*", "end": "\\*\\)", "patterns": [{ "include": "#comments" }] }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.ntsl",
+          "match": "\\b(?i)(input|var|function|procedure|begin|end|if|then|else|for|to|downto|do|while|repeat|until|Result)\\b"
+        }
+      ]
+    },
+    "logical_operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.ntsl",
+          "match": "\\b(?i)(and|or|not)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.ntsl",
+          "match": "\\b(?i)(Float|Real|Integer|Inteiro|Boolean|Booleano|String|Série|Serie|Double)\\b"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.ntsl",
+          "match": "\\b(?i)(Verdadeiro|Falso|True|False)\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "entity.name.function.ntsl",
+          "match": "\\b(?i)(ABS|AccAgressSaldo|AccuDistr|AccuDistrW|AdaptiveMovingAverage|ADX|AgressionVolBalance|AgressionVolBuy|AgressionVolSell|Alert|AllTimeHigh|AllTimeLow|Arctangent|ArmsEaseOfMov|AroonLin|AroonOsc|AskPrice|AskSize|AssetHasValue|AutoFibonacci|AutoFibonacciCustom|AutomationResult|Averan|AvgAgent|AvgAgrBuySell|AvgAgrTotal|AvgPrice|AvgSeparation|AvgTradeResult|AvgTradeResultDaily|AvgTrueRange|BalanceAgent|BalanceOfPower|BarAnnualization|BarCount|BarDuration|BarDurationF|Bartype|BearPower|BidAsk|BidPrice|BidSize|BollingerBands|BollingerBandW|BollingerBPerc|BookSpread|BoolToString|BTCPrice|BTCSpread|BullPower|BuyAtMarket|BuyLimit|BuyOfferCount|BuyPosition|BuyPositionQty|BuyPrice|BuyStop|BuyToCoverAtMarket|BuyToCoverLimit|BuyToCoverStop|C_3WhSolds_3BlkCrows|CalcDate|CalcTime|CalcWorkingDate|CancelPendingOrders|C_BullEng_BearEng|CCI|C_Doji|Ceiling|ChaikinMoneyFlow|ChaikinOsc|ChainSetup|C_Hammer_HangingMan|CloseD|CloseM|ClosePosition|CloseW|CloseY|C_MornDoji_EveDoji|C_MornStar_EveStar|COHENPRICEWAVE|COHENWEISWAVE|Combination|CompareFloat|ConsoleLog|ContadorDeCandle|Cos|Cosine|Cotangent|C_PierceLine_DkCloud|C_ShootingStar|Cum|CurrentAssetDate|CurrentBar|CurrentDate|CurrentTime|DailyResult|DarvasBox|Date|DayOfMonth|DayOfWeek|DaysToExpiration|DecisionPoints|Delta|DiDiIndex|DiMaisDiMenos|DiPDiM|DivergenceDetector|DonchianCh|DonchianCH|DTOscillator|ELDate|ELDate_Consol|EMA|Envelope|Euroinvest|Exp|ExpValue|ExtremePriceRatio|Factorial|FastD|FastK|FastKCustom|FastStochastic|FastWMA|FgzRobot|FinancialVol|FindBar|FirstWorkingDayOfMonth|FirstWorkingDayOfWeek|FirstWorkingDayOfYear|FloatToString|Floor|ForceIndex|FracPortion|FrassonATR|FrassonVH|Friday|FullStochastic|FuraChao|FuraTeto|Gamma|GCD|GetAsset|GetFeed|GetPlotColor|GetPlotWidth|GraphicInterval|GraphicOffset|HarmonicMean|HasPendingOrders|HasPosition|HeikinAshi|HighD|Highest|HighestBar|HighestVolume|HighestVolumePrice|HighM|HighW|HighY|HiloActivator|HiLoActivator|HistVolatility|HorizontalLine|HorizontalLineCustom|HullMovingAverage|IchimokuCloud|IFR|ImpliedVolatility|IntPortion|IsBMF|IsBought|IsSold|IsWorkingDay|KeltnerCH|KVO|LastBarOnChart|LastCalcDate|LastCalcTime|LastDayOfMonth|LastTradeResult|LastWorkingDayOfMonth|LastWorkingDayOfWeek|LastWorkingDayOfYear|Leader|LinearRegressionChannel|LineSegment|Log|LogN|Lote|LowD|Lowest|LowestBar|LowM|LowW|LowY|LSVolatilityIndex|MACD|MADRIDMOVINGAVERAGE|MADRIDTRENDSQUEEZE|MAGOMACD|MAGOMEDIAS|Max|MaxBarsBack|MaxBarsForward|Media|MediaExp|MedianPrice|MFI|MidPoint|MIMA|MIMAROC|Min|MinOrderIncrement|MinOrderQty|MinPriceIncrement|MinutesIntoWeek|MinutesToTime|Mod|Momentum|MomentumStochastic|Monday|MoneyFlow|MoneyFlowIndex|Month|MyPrice|Neg|NelogicaBottomFinder|NelogicaPullBackFinder|NelogicaWeisWave|Next3rdFriday|NomedaFun|NoPlot|NumberOfPendingOrders|NumUnits|OBV|OBVAvg|OnBalanceTR|OpenD|OpenDaily|OpenInterest|OpenM|OpenResult|OpenW|OpenY|PaintBar|PaintVar|ParabolicSAR|PercentChange|PercentR|Permutation|Phibo|Pivot|Plot|Plot2|Plot3|Plot99|PlotCandle|PlotN|PlotText|Pos|Position|PositionQty|Power|PowerF|PowerMeter|Price|PriceNery|PRICENERY|PriceOsc|PriceOscillator|PriceVolumeTrend|PriorCote|PTAX|PTAXFuturo|QuantityVol|QuarterEnd|QuarterStart|Rafi|Random|Range|RangeLeader|RateOfChange|Ravi|RBG|RenkoVTwo|ReversePosition|RGB|Rho|ROC|Round|Round2Fraction|RS_BarsPerDay|RSI|RsiStochastic|SafeZoneDownTrend|SafeZoneUpTrend|SampleAverage|SampleBollinger|SampleMACD|SampleRSI|SampleStochastic|SampleVWAP|Santo|Saturday|Select|SellOfferCount|SellPosition|SellPositionQty|SellPrice|SellShortAtMarket|SellShortLimit|SellShortStop|SellToCoverAtMarket|SellToCoverLimit|SellToCoverStop|SendOrder|SetPlotColor|SetPlotStyle|SetPlotType|SetPlotWidth|Sign|Sin|Sine|SlowD|SlowK|SlowStochastic|SMA|SOMOSRENKOTRENDMPONTO|Sqrt|Square|StdDevConstPeriod|StdDevs|StopATR|Strike|StringContains|StringCopy|StringEndsWith|StringPos|StringStartsWith|SubString|Summation|Sunday|Tangent|TENDENCYTRACKER|Theta|Thursday|Tilson|Time|TimeAgrBuySll|TimeAgrSellBuy|TimeAgrTotal|TimeExchange|TimeToMinutes|Today|TopBottomDetector|TOSCANABRUNELLO|TOSCANAPICCOLA|TOSCANAPICCOLO|TOSCANAPRODUTIVIDADE|TOSCANART|TotalBuyQtd|TotalSellQtd|TRADENCIATRENDVARIATION|Trades|TRENDAVERAGE|TRENDCLOUD|TRENDDIFUSOR|TRENDFLOW|TRENDSNIPER|TRENDSOLDIER|TRENDVOLAG|TriAverage|TRIX|TRIXM|TRPTAX|TRPTAXFuturo|TrueHigh|TrueLow|TrueRange|TrueRangeCustom|Tuesday|TwoMVAggression|TwoMVPower|TWOMVVOLATILITY|TypicalPrice|UlcerIndex|UltimateOscillator|Valerie|Vega|VerticalLine|VerticalLineCustom|Volatility|VolumeAgent|VolumeAtPrice|VolumeD|VolumeM|VolumeOsc|VolumeROC|VolumeW|VolumeY|VSS|VWAP|VWAPDate|VWAPMonthly|VWAPWeekly|VWMA|Wednesday|WeightedClose|WellesSum|Williams|xAverage|XRay|Year|Yesterday)\\b"
+        }
+      ]
+    },
+    "series": {
+      "patterns": [
+        {
+          "name": "variable.language.ntsl",
+          "match": "\\b(?i)(Open|High|Low|Close|Volume|Quantity|Date|Time|CurrentBar|CurrentDate|BarType|BarDuration|LastBarOnChart|Abertura|Fechamento|Máxima|Mínima|Maxima|Minima)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.other.symbol.ntsl",
+          "match": "\\b(?i)(clGreen|clRed|clBlue|clYellow|clWhite|clFuchsia|clDkGray|clBlack|clAqua|clMaroon|psSolid|psDash|psDot|psDashDot)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.assignment.ntsl",
+          "match": ":=|<>|<=|>="
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.ntsl",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.ntsl",
+          "begin": "\"", "end": "\"", "patterns": [{ "include": "#comments" }]
+        }
+      ]
+    }
+  }
+}
